@@ -6,9 +6,16 @@
     <br>Kelas: TI 2D
 </b></p>
 <hr>
+<p><strong>Teknologi</strong></p>
+<ul style="list-style-type:disc;">
+  <li>Laravel 11</li>
+  <li>AdminLTE - Boostrap 3</li>
+  <li>Postman</li>
+</ul>
+<hr>
 <p><b>Struktur Proyek</b></p>
     <ul>
-      <li><code>frontend-uas-[NIM_ANDA]</code> – Proyek Laravel</li>
+      <li><code>frontend-uas-230202074</code> – Proyek Laravel</li>
       <li>Menyediakan antarmuka CRUD untuk:
         <ul>
           <li>Pasien</li>
@@ -72,6 +79,24 @@ Tujuan: Agar Laravel tau URL mana yang akan memanggil controller tertentu.
 <br>Konfigurasi untuk menjalankan server atau project
 <pre>php artisan serve</pre>
 Tujuan: Menyalakan frontend Laravel agar bisa diakses lewat browser di http://localhost:8000. Wajib dijalankan agar frontend bisa digunakan.
+
+<hr>
+<p><strong>Fitur CRUD</strong></p>
+<b>Pasien</b>
+<ul style="list-style-type:disc;">
+  <li>Lihat daftar pasien</li>
+  <li>Tambah data pasien</li>
+  <li>Edit data pasien</li>
+  <li>Hapus data pasien</li>
+</ul>
+<br>
+<b>Obat</b>
+<ul style="list-style-type:disc;">
+  <li>Lihat daftar obat</li>
+  <li>Tambah data obat</li>
+  <li>Edit data obat</li>
+  <li>Hapus data obat</li>
+</ul>
 
 <hr>
 <p><strong>STRUKTUR FOLDER FRONTEND</strong></p>
