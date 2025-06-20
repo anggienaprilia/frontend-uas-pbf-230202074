@@ -108,7 +108,7 @@ Fitur tambahan yang dibuat adalah fitur filter. Fitur filter biasanya digunakan 
   <li>Berdasarkan nama pasien huruf A-Z</li>
   <li>Berdasarkan nama pasien huruf Z-A</li>
 </ul>
-![image](https://github.com/user-attachments/assets/292ec7db-bd99-4dc3-810b-fd2b51407a96)
+![image](https://github.com/user-attachments/assets/292ec7db-bd99-4dc3-810b-fd2b51407a96) 
 
 
 <br><b>2. Filter Obat</b>
@@ -119,9 +119,9 @@ Fitur tambahan yang dibuat adalah fitur filter. Fitur filter biasanya digunakan 
   <li>Berdasarkan kategori obat huruf A-Z</li>
   <li>Berdasarkan kategori obat huruf Z-A</li>
 </ul>
-![image](https://github.com/user-attachments/assets/581376d0-0529-49ca-af10-46d5933dd1e7)
+![image](https://github.com/user-attachments/assets/ed6eba60-f140-400b-988f-5f801287c79d)
 
-
+ 
 <hr>
 <p><strong>STRUKTUR FOLDER FRONTEND</strong></p>
 
