@@ -21,33 +21,32 @@
     </ul>
 <hr>
 
-<br>
 <strong>Cara Instalasi dan Menjalankan Project</strong>
 <br>
 <b><p>1. Install Laravel 11</b>
 <br>Perintah untuk menginstall Laravel 11:
-<br><pre><code>composer create-project laravel/laravel:^11 frontend-uas-pbf-230202074</code></pre>
+<br><pre>composer create-project laravel/laravel:^11 frontend-uas-pbf-230202074</pre>
 Pastikan instalasi laravel 11 berada di C:\laragon\www agar memundahkan untuk menjalankannya. Setelah itu, masuk ke dalam folder laravel yang telah dibuat.
 <br>Tujuan: Membuat folder proyek Laravel 11 baru yang digunakan sebagai frontend dari sistem manajemen rumah sakit. Di dalamnya nanti programmer akan menulis semua kode tampilan dan konsumsi API dari backend CI4.
 
 <b><p>2. Instalasi AdminLTE 3 dan Bootstrap</b>
 <br>Perintah untuk menginstall template AdminLTE 3:
-<br><code><pre>composer require jeroennoten/laravel-adminlte</pre></code>
+<br><pre>composer require jeroennoten/laravel-adminlte</pre>
 Lalu jalankan hasil instalasi dengan perintah
-<code><pre>php artisan adminlte:install</pre></code>
-<br>Tujuan: Menggunakan template AdminLTE agar tampilan web frontend-nya langsung profesional (sudah ada sidebar, navbar, tombol Bootstrap, dll). AdminLTE cocok untuk dashboard aplikasi data seperti sistem manajemen rumah sakit
+<pre>php artisan adminlte:install</pre>
+Tujuan: Menggunakan template AdminLTE agar tampilan web frontend-nya langsung profesional (sudah ada sidebar, navbar, tombol Bootstrap, dll). AdminLTE cocok untuk dashboard aplikasi data seperti sistem manajemen rumah sakit
 
 <b><p>3. Atur Konfigurasi .env</b>
 <br>Edit file .env, sesuaikan konfigurasi berikut agar Laravel dapat mengakses backend:
-<code><pre>APP_NAME=RumahSakit</pre></code>
-<code><pre>APP_URL=http://localhost:8000</pre></code>
-<br>APP_URL adalah URL dari frontend Laravel.
-<br>API_URL adalah URL dari backend CodeIgniter. Ini digunakan agar Laravel tahu ke mana harus mengirim request untuk ambil data obat/pasien
+<pre>APP_NAME=RumahSakit</pre>
+<pre>APP_URL=http://localhost:8000</pre>
+APP_URL adalah URL dari frontend Laravel.
+<br>API_URL adalah URL dari backend CodeIgniter. Ini digunakan agar Laravel tahu ke mana harus mengirim request untuk ambil data obat/pasien.
 
 <b><p>4. Tambahkan Konfigurasi API_URL</b>
 <br>Konfigurasi API_URL dilakukan di config/service.php
-<code><pre>'perpus_api' => ['base_uri' => env('API_URL', 'http://localhost:8080'),]</pre></code>
-<br>Tujuan: Menyimpan endpoint API backend agar bisa dipanggil secara global dari mana saja dalam Laravel. Ini semacam shortcut URL yang akan dipanggil nanti oleh ApiService.
+<pre>'perpus_api' => ['base_uri' => env('API_URL', 'http://localhost:8080'),]</pre>
+Tujuan: Menyimpan endpoint API backend agar bisa dipanggil secara global dari mana saja dalam Laravel. Ini semacam shortcut URL yang akan dipanggil nanti oleh ApiService.
 
 <b><p>5. Buat Service API Helper</b>
 <br>Konfigurasi API Helper dilakukan di app/Services/ApiService.php
@@ -55,15 +54,15 @@ Lalu jalankan hasil instalasi dengan perintah
 
 <b><p>6. Buat Controller</b>
 <br>Konfigurasi controller
-<code><pre>php artisan make:controller ObatController</pre></code>
-<code><pre>php artisan make:controller PasienController</pre></code>
-<br>Tujuan: Mengelola logika frontend, misalnya menampilkan data dari API ke blade, mengirim form tambah/edit ke API dan menangani tombol hapus.
+<pre>php artisan make:controller ObatController</pre>
+<pre>php artisan make:controller PasienController</pre>
+Tujuan: Mengelola logika frontend, misalnya menampilkan data dari API ke blade, mengirim form tambah/edit ke API dan menangani tombol hapus.
 
 <b><p>7. routing Web</b>
 <br>Routing Web dilakukan di routes/web.php
-<code><pre>Route::resource('obat', ObatController::class);</pre></code>
-<code><pre>Route::resource('pasien', PasienController::class);</pre></code>
-<br>Tujuan: Agar Laravel tau URL mana yang akan memanggil controller tertentu. 
+<pre>Route::resource('obat', ObatController::class);</pre>
+<pre>Route::resource('pasien', PasienController::class);</pre>
+Tujuan: Agar Laravel tau URL mana yang akan memanggil controller tertentu. 
 
 <b><p>8. Blade Template (Views)</b>
 <br>Blade Tempat dibuat pada resources/views/obat/index.blade.php, dll
@@ -71,18 +70,19 @@ Lalu jalankan hasil instalasi dengan perintah
 
 <b><p>9. Jalankan Server</b>
 <br>Konfigurasi untuk menjalankan server atau project
-<code><pre>php artisan serve</pre></code>
-<br>Tujuan: Menyalakan frontend Laravel agar bisa diakses lewat browser di http://localhost:8000. Wajib dijalankan agar frontend bisa digunakan.
+<pre>php artisan serve</pre>
+Tujuan: Menyalakan frontend Laravel agar bisa diakses lewat browser di http://localhost:8000. Wajib dijalankan agar frontend bisa digunakan.
 
 <hr>
 <p><strong>STRUKTUR FOLDER FRONTEND</strong></p>
+
 ```bash
-frontend_perpustakaan/
+frontend-uas-230202074/
 ├── app/
 │   ├── Http/
 │   │   ├── Controllers/
-│   │   │   ├── BukuController.php
-│   │   │   ├── PeminjamanController.php
+│   │   │   ├── ObatController.php
+│   │   │   ├── PasienController.php
 │   │   └── Middleware/
 │   ├── Providers/
 │   └── Services/
@@ -90,18 +90,18 @@ frontend_perpustakaan/
 │
 ├── bootstrap/
 ├── config/
-│   └── services.php             <-- Tambahkan konfigurasi 'perpus_api'
+│   └── services.php             <-- Tambahkan konfigurasi 'rumahsakit_api'
 │
 ├── public/
 │   └── index.php
 │
 ├── resources/
 │   ├── views/
-│   │   ├── buku/
+│   │   ├── obat/
 │   │   │   ├── index.blade.php
 │   │   │   ├── create.blade.php
 │   │   │   └── edit.blade.php
-│   │   ├── peminjaman/
+│   │   ├── pasien/
 │   │   │   ├── index.blade.php
 │   │   │   ├── create.blade.php
 │   │   │   └── edit.blade.php
