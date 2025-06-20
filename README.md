@@ -99,6 +99,30 @@ Tujuan: Menyalakan frontend Laravel agar bisa diakses lewat browser di http://lo
 </ul>
 
 <hr>
+<p><strong>Fitur Tambahan</strong></p>
+Fitur tambahan yang dibuat adalah fitur filter. Fitur filter biasanya digunakan untuk menyaring data yang ditampilkan, agar pengguna dapat dengan cepat menemukan informasi yang spesifik tanpa harus menelusuri seluruh daftar.
+<br><b>Penggunaan fitur filter:</b>
+<br><b>1. Filter Pasien</b>
+<br>Contoh filter:
+<ul style="list-style-type:disc;">
+  <li>Berdasarkan nama pasien huruf A-Z</li>
+  <li>Berdasarkan nama pasien huruf Z-A</li>
+</ul>
+![image](https://github.com/user-attachments/assets/292ec7db-bd99-4dc3-810b-fd2b51407a96)
+
+
+<br><b>2. Filter Obat</b>
+<br>Contoh filter:
+<ul style="list-style-type:disc;">
+  <li>Berdasarkan nama obat huruf A-Z</li>
+  <li>Berdasarkan nama obat huruf Z-A</li>
+  <li>Berdasarkan kategori obat huruf A-Z</li>
+  <li>Berdasarkan kategori obat huruf Z-A</li>
+</ul>
+![image](https://github.com/user-attachments/assets/581376d0-0529-49ca-af10-46d5933dd1e7)
+
+
+<hr>
 <p><strong>STRUKTUR FOLDER FRONTEND</strong></p>
 
 ```bash
